@@ -5,10 +5,10 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy requirements.txt and install dependencies
-RUN pip install transformers torch flask
+RUN pip install -r python/requirements.txt
 
-COPY llm.py .
-COPY app.py .
+COPY python/llm.py .
+COPY python/app.py .
 COPY templates templates
 
 # Set environment variables (optional)
